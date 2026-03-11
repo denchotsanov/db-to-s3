@@ -11,9 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('email', function (Blueprint $table) {
+        Schema::table('emails', function (Blueprint $table) {
             $table->string('body_s3_path')->nullable();
-            $table->string('file_s3_paths')->nullable();
+            $table->json('file_s3_paths')->nullable();
         });
     }
 
@@ -22,9 +22,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('email', function (Blueprint $table) {
-            $table->dropColumn('body_s3_path');
-            $table->dropColumn('file_s3_paths');
+        Schema::table('emails', function (Blueprint $table) {
+            $table->dropColumn(['body_s3_path', 'file_s3_paths']);
         });
     }
 };

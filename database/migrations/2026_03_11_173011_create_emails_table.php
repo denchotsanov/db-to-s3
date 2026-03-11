@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('receiver_email');
             $table->string('sender_email');
             $table->string('subject')->nullable();
-            $table->text('body');
+            $table->text('body')->nullable();
             $table->json('file_ids');
             $table->dateTime('created_at')->useCurrent();
             $table->dateTime('sent_at')->nullable();
