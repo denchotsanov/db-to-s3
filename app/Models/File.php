@@ -17,6 +17,6 @@ class File extends Model
         'path',
         'size',
         'type',
+        's3_path',
     ];
 }
-
