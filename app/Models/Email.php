@@ -30,9 +30,10 @@ class Email extends Model
     ];
 
     protected $casts = [
-        'file_ids'   => 'array',
-        'created_at' => 'datetime',
-        'sent_at'    => 'datetime',
+        'file_ids'      => 'array',
+        'file_s3_paths' => 'array',
+        'created_at'    => 'datetime',
+        'sent_at'       => 'datetime',
     ];
 
     /**
